@@ -1,12 +1,4 @@
-const express = require('express');
 const fetch = require('node-fetch');
-const path = require('path');
-
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
 const BRANDS = [
   { id: 'all', name: 'All Brands', url: 'status.php?brand=all' },
@@ -24,7 +16,7 @@ const BRANDS = [
 ];
 
 let statusCache = { data: null, timestamp: 0 };
-const CACHE_DURATION = 30000; // 30 seconds
+const CACHE_DURATION = 30000;
 
 async function fetchBrandStatus(brand) {
   const base = 'https://support.cosmotickets.com/status/';
@@ -119,7 +111,6 @@ function parseStatusHtml(html, brandName) {
   const products = [];
   const clean = (str) => str.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
-  // Try to find product name and status in table rows
   const tableRows = html.matchAll(/<tr[^>]*>[\s\S]*?<td[^>]*>([^<]+)<\/td>[\s\S]*?<td[^>]*>([^<]+)<\/td>[\s\S]*?<\/tr>/gi);
   for (const row of tableRows) {
     const name = clean(row[1]);
@@ -130,7 +121,6 @@ function parseStatusHtml(html, brandName) {
     }
   }
 
-  // Try div-based patterns
   if (products.length === 0) {
     const divItems = html.matchAll(/<div[^>]*class="[^"]*(?:product|item|status)[^"]*"[^>]*>([\s\S]*?)<\/div>/gi);
     for (const item of divItems) {
@@ -142,28 +132,6 @@ function parseStatusHtml(html, brandName) {
           if (lowerText.includes(kw)) {
             products.push({ name: text.split(kw)[0].trim() || brandName, status: normalizeStatus(kw) });
             break;
-          }
-        }
-      }
-    }
-  }
-
-  // Fallback: look for any text with status keywords
-  if (products.length === 0) {
-    const allText = html.match(/<body[^>]*>([\s\S]*)<\/body>/i);
-    if (allText) {
-      const text = clean(allText[1]);
-      const statusKeywords = ['updating', 'testing', 'online', 'offline', 'maintenance', 'operational'];
-      for (const kw of statusKeywords) {
-        const regex = new RegExp(`(${kw})`, 'gi');
-        let match;
-        while ((match = regex.exec(text)) !== null) {
-          const start = Math.max(0, match.index - 30);
-          const end = Math.min(text.length, match.index + 50);
-          const context = text.substring(start, end);
-          const nameMatch = context.match(/([A-Za-z]{3,30})/);
-          if (nameMatch) {
-            products.push({ name: nameMatch[1], status: normalizeStatus(kw) });
           }
         }
       }
@@ -183,16 +151,24 @@ function normalizeStatus(status) {
   return status || 'Unknown';
 }
 
-// Combined status endpoint - fetches all brands
-app.get('/api/status', async (req, res) => {
-  // Check cache
+module.exports = async (req, res) => {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   const now = Date.now();
+  
+  // Check cache
   if (statusCache.data && (now - statusCache.timestamp) < CACHE_DURATION) {
     return res.json(statusCache.data);
   }
 
   try {
-    // Fetch all brands in parallel
     const results = await Promise.all(BRANDS.map(brand => fetchBrandStatus(brand)));
     
     const response = {
@@ -202,42 +178,10 @@ app.get('/api/status', async (req, res) => {
       nextUpdate: new Date(now + CACHE_DURATION).toISOString()
     };
 
-    // Cache the result
     statusCache = { data: response, timestamp: now };
     
     res.json(response);
   } catch (err) {
-    console.error('Status proxy error:', err.message);
     res.status(500).json({ success: false, error: err.message });
   }
-});
-
-// Single brand status endpoint
-app.get('/api/status/:brand', async (req, res) => {
-  const brand = BRANDS.find(b => b.id === req.params.brand);
-  if (!brand) {
-    return res.status(404).json({ success: false, error: 'Brand not found' });
-  }
-
-  try {
-    const result = await fetchBrandStatus(brand);
-    res.json({ success: true, ...result });
-  } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
-  }
-});
-
-// Get list of all brands
-app.get('/api/brands', (req, res) => {
-  res.json({ brands: BRANDS.map(b => ({ id: b.id, name: b.name })) });
-});
-
-// Serve all pages
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
-app.get('/guide', (req, res) => res.sendFile(path.join(__dirname, 'public', 'guide.html')));
-app.get('/status', (req, res) => res.sendFile(path.join(__dirname, 'public', 'status.html')));
-app.get('/commands', (req, res) => res.sendFile(path.join(__dirname, 'public', 'commands.html')));
-
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Cosmo Support running on port ${PORT}`);
-});
+};
