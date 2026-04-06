@@ -3,7 +3,7 @@
     const resp = await cosmoFetch('/api/auth/me');
     const data = await resp.json();
     if (!data || !data.authenticated) {
-      window.location.href = '/';
+      window.location.href = 'index.html';
       return;
     }
 
@@ -19,10 +19,10 @@
         try {
           await cosmoFetch('/api/auth/logout', { method: 'POST' });
         } catch (_) {}
-        window.location.href = '/';
+        window.location.href = 'index.html';
       });
     });
   } catch (_) {
-    window.location.href = '/';
+    window.location.href = 'index.html';
   }
 })();

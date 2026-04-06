@@ -634,7 +634,7 @@ function showLoginRequired(count) {
         Either the scraper is not connected or all products are currently not in Updating/Testing state.
       </div>
       <div style="font-size:14px;margin-bottom:24px;">
-        <span style="color:#a78bfa;">Status endpoint: /api/status</span>
+        <span style="color:#a78bfa;">Status endpoint: ${escapeHtml(cosmoApiUrl('/api/status'))}</span>
       </div>
       <div style="font-size:12px;color:var(--text3);">Expected password: <strong>support</strong></div>
     </div>`;
@@ -665,6 +665,15 @@ function renderSummary(results) {
       <span class="summary-count" style="color:#8ea6ff;">${counts.testing}</span>
       <span class="summary-label">Testing Products</span>
     </div>`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 function renderBrands(results) {

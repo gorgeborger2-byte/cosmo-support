@@ -98,7 +98,7 @@ async function checkAlreadyLoggedIn() {
   try {
     const r = await cosmoFetch('/api/auth/me');
     const d = await r.json();
-    if (d && d.authenticated) window.location.href = '/dashboard';
+    if (d && d.authenticated) window.location.href = 'dashboard.html';
   } catch (_) {}
 }
 
@@ -124,7 +124,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
       btn.disabled = false;
       return;
     }
-    window.location.href = '/dashboard';
+    window.location.href = 'dashboard.html';
   } catch (_) {
     errorEl.textContent = 'Network error. Try again.';
     btn.disabled = false;
