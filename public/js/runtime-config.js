@@ -6,7 +6,7 @@
 
   var defaultHostedApiBase = '';
   if (window.location.hostname === 'gorgeborger2-byte.github.io') {
-    defaultHostedApiBase = 'https://exam-phd-jean-variable.trycloudflare.com';
+    defaultHostedApiBase = 'https://reported-becomes-compressed-face.trycloudflare.com';
   }
 
   var apiBase = window.COSMO_API_BASE || storedBase || defaultHostedApiBase || '';
