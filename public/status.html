@@ -504,26 +504,32 @@ function isActiveStatus(status) {
 }
 
 function filterToActiveStates(results) {
-  // Only use "All Brands" to avoid duplicate counting
-  const allBrands = (results || []).find(b => b.brand === 'All Brands');
-  if (!allBrands) return [];
-  
-  const filteredProducts = (allBrands.products || []).filter(p => isActiveStatus(p.status));
-  const updatingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('updat')).length;
-  const testingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('test')).length;
-  
-  let state = 'Unknown';
-  if (updatingCount > 0 && testingCount > 0) state = 'Updating + Testing';
-  else if (updatingCount > 0) state = 'Updating';
-  else if (testingCount > 0) state = 'Testing';
-  
-  return [{
-    ...allBrands,
-    status: state,
-    products: filteredProducts,
-    updatingCount,
-    testingCount
-  }];
+  const filtered = (results || [])
+    .map(brand => {
+      const filteredProducts = (brand.products || []).filter(p => isActiveStatus(p.status));
+      const updatingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('updat')).length;
+      const testingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('test')).length;
+      let state = 'Unknown';
+      if (updatingCount > 0 && testingCount > 0) state = 'Updating + Testing';
+      else if (updatingCount > 0) state = 'Updating';
+      else if (testingCount > 0) state = 'Testing';
+      return {
+        ...brand,
+        status: state,
+        products: filteredProducts,
+        updatingCount,
+        testingCount
+      };
+    })
+    .filter(brand => brand.products.length > 0);
+  return filtered.sort((a, b) => {
+      const aBoth = a.updatingCount > 0 && a.testingCount > 0 ? 1 : 0;
+      const bBoth = b.updatingCount > 0 && b.testingCount > 0 ? 1 : 0;
+      if (bBoth !== aBoth) return bBoth - aBoth;
+      if (b.updatingCount !== a.updatingCount) return b.updatingCount - a.updatingCount;
+      if (b.testingCount !== a.testingCount) return b.testingCount - a.testingCount;
+      return a.brand.localeCompare(b.brand);
+    });
 }
 
 
@@ -609,7 +615,33 @@ function showLoginRequired(count) {
 }
 
 function renderSummary(results) {
-  document.getElementById('summaryBar').innerHTML = '';
+  // Get counts ONLY from All Brands to avoid duplicate counting
+  const allBrands = (results || []).find(b => b.brand === 'All Brands');
+  const counts = { updating: 0, testing: 0 };
+  
+  if (allBrands && allBrands.products) {
+    allBrands.products.forEach(p => {
+      const s = p.status.toLowerCase();
+      if (s.includes('updat')) counts.updating++;
+      else if (s.includes('test')) counts.testing++;
+    });
+  }
+  
+  // Only show if there are counts
+  if (counts.updating === 0 && counts.testing === 0) {
+    document.getElementById('summaryBar').innerHTML = '';
+    return;
+  }
+  
+  document.getElementById('summaryBar').innerHTML = `
+    <div class="summary-item" style="border-color: rgba(184,148,255,0.3); background: rgba(184,148,255,0.08);">
+      <span class="summary-count" style="color:#b894ff;">${counts.updating}</span>
+      <span class="summary-label">Updating Products</span>
+    </div>
+    <div class="summary-item" style="border-color: rgba(142,166,255,0.3); background: rgba(142,166,255,0.08);">
+      <span class="summary-count" style="color:#8ea6ff;">${counts.testing}</span>
+      <span class="summary-label">Testing Products</span>
+    </div>`;
 }
 
 function escapeHtml(value) {
