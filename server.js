@@ -508,6 +508,12 @@ app.get('/status', requireAuth, (_req, res) => res.sendFile(path.join(PUBLIC_DIR
 app.get('/commands', requireAuth, (_req, res) => res.sendFile(path.join(PUBLIC_DIR, 'commands.html')));
 app.get('/admin', requireAdmin, (_req, res) => res.sendFile(path.join(PUBLIC_DIR, 'admin.html')));
 
+// Serve status.json directly for status page
+app.get('/data/status.json', (_req, res) => {
+  const jsonPath = path.join(__dirname, 'public', 'data', 'status.json');
+  res.sendFile(jsonPath);
+});
+
 app.listen(PORT, '0.0.0.0', () => {
   loadUsers();
   console.log(`Cosmo Support running on http://localhost:${PORT}`);

@@ -509,11 +509,13 @@ function isActiveStatus(status) {
 }
 
 function filterToActiveStates(results) {
-  return (results || [])
+  console.log('filterToActiveStates: Input brands:', results?.length);
+  const filtered = (results || [])
     .map(brand => {
       const filteredProducts = (brand.products || []).filter(p => isActiveStatus(p.status));
       const updatingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('updat')).length;
       const testingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('test')).length;
+      console.log(`filterToActiveStates: ${brand.brand} - updating:${updatingCount}, testing:${testingCount}, filteredProducts:${filteredProducts.length}`);
       let state = 'Unknown';
       if (updatingCount > 0 && testingCount > 0) state = 'Updating + Testing';
       else if (updatingCount > 0) state = 'Updating';
@@ -526,7 +528,9 @@ function filterToActiveStates(results) {
         testingCount
       };
     })
-    .filter(brand => brand.products.length > 0)
+    .filter(brand => brand.products.length > 0);
+  console.log('filterToActiveStates: Output brands:', filtered.length);
+  return filtered;
     .sort((a, b) => {
       const aBoth = a.updatingCount > 0 && a.testingCount > 0 ? 1 : 0;
       const bBoth = b.updatingCount > 0 && b.testingCount > 0 ? 1 : 0;
@@ -537,21 +541,7 @@ function filterToActiveStates(results) {
     });
 }
 
-async function fetchStatusData() {
-  let lastError = null;
-  for (const endpoint of API_ENDPOINTS) {
-    try {
-      const resp = await fetch(endpoint.url, { cache: 'no-store', signal: AbortSignal.timeout(30000) });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      const data = await resp.json();
-      if (data && Array.isArray(data.brands)) return data;
-      throw new Error('Invalid response payload');
-    } catch (err) {
-      lastError = err;
-    }
-  }
-  throw lastError || new Error('No status endpoint available');
-}
+
 
 function formatAge(ms) {
   if (ms == null || Number.isNaN(ms)) return '—';
@@ -585,18 +575,13 @@ async function fetchAllStatuses() {
 
   try {
     const data = await fetchStatusData();
-    const results = filterToActiveStates(data.brands || []);
+    const results = filterToActiveStates(data.brands);
     const hasAnyData = results.length > 0;
 
     // Update mode display
     const healthEl = document.getElementById('backendHealth');
-    if (currentMode === 'live') {
-      healthEl.textContent = 'Live API';
-      healthEl.style.color = '#86efac';
-    } else {
-      healthEl.textContent = 'GitHub Snapshot';
-      healthEl.style.color = '#fde68a';
-    }
+    healthEl.textContent = 'GitHub Snapshot';
+    healthEl.style.color = '#fde68a';
 
     if (!hasAnyData) {
       showLoginRequired(12);
