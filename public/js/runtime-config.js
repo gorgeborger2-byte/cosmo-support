@@ -4,7 +4,12 @@
     storedBase = localStorage.getItem('COSMO_API_BASE') || '';
   } catch (_) {}
 
-  var apiBase = window.COSMO_API_BASE || storedBase || '';
+  var defaultHostedApiBase = '';
+  if (window.location.hostname === 'gorgeborger2-byte.github.io') {
+    defaultHostedApiBase = 'https://exam-phd-jean-variable.trycloudflare.com';
+  }
+
+  var apiBase = window.COSMO_API_BASE || storedBase || defaultHostedApiBase || '';
   var host = window.location.hostname;
 
   if (!apiBase && (host === 'localhost' || host === '127.0.0.1')) {
