@@ -627,12 +627,6 @@ function renderSummary(results) {
     });
   }
   
-  // Only show if there are counts
-  if (counts.updating === 0 && counts.testing === 0) {
-    document.getElementById('summaryBar').innerHTML = '';
-    return;
-  }
-  
   document.getElementById('summaryBar').innerHTML = `
     <div class="summary-item" style="border-color: rgba(184,148,255,0.3); background: rgba(184,148,255,0.08);">
       <span class="summary-count" style="color:#b894ff;">${counts.updating}</span>

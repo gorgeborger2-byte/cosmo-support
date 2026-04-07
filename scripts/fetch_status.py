@@ -116,14 +116,19 @@ def do_login(page):
 
 def main():
     results = []
+    all_brand_products = {}  # name -> brand mapping
     total_products = 0
+    logged_in = False
+    
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
         logged_in = do_login(page)
 
-        for brand in BRANDS:
+        # First pass: collect products from individual brand pages to build proper All Brands
+        brand_products = {}
+        for brand in BRANDS[1:]:  # Skip "All Brands" first
             try:
                 page.goto(brand["url"], wait_until="domcontentloaded", timeout=45000)
                 html = page.content()
@@ -131,13 +136,19 @@ def main():
                     logged_in = do_login(page)
                     page.goto(brand["url"], wait_until="domcontentloaded", timeout=45000)
                     html = page.content()
-
+                
                 if is_login_page(html):
                     results.append({"brand": brand["name"], "status": "Login Required", "products": []})
                     continue
-
+                
                 products = parse_products(html, brand["name"])
+                brand_products[brand["name"]] = products
                 total_products += len(products)
+                
+                # Store for All Brands
+                for p in products:
+                    all_brand_products[p["name"]] = brand["name"]
+                
                 results.append(
                     {"brand": brand["name"], "status": overall_status(products), "products": products}
                 )
@@ -145,6 +156,27 @@ def main():
                 results.append(
                     {"brand": brand["name"], "status": "Error", "products": [], "error": str(exc)}
                 )
+
+        # Build All Brands with correct brand attribution
+        all_brands_products = []
+        for name, actual_brand in all_brand_products.items():
+            # Find this product's status from any brand that has it
+            status = "Undetected"
+            for bname, prods in brand_products.items():
+                for p in prods:
+                    if p["name"] == name:
+                        status = p["status"]
+                        break
+                if status != "Undetected":
+                    break
+            all_brands_products.append({"name": name, "brand": actual_brand, "status": status})
+        
+        # Add All Brands at the beginning
+        results.insert(0, {
+            "brand": "All Brands",
+            "status": overall_status(all_brands_products),
+            "products": all_brands_products
+        })
 
         browser.close()
 
