@@ -208,48 +208,6 @@ app.post('/api/auth/login', (req, res) => {
   return res.json({ success: true, user: publicUser(user) });
 });
 
-// Self-registration endpoint (creates 'support' role by default)
-app.post('/api/auth/register', (req, res) => {
-  const username = String(req.body.username || '').trim();
-  const password = String(req.body.password || '');
-
-  if (!username || !password) {
-    return res.status(400).json({ success: false, error: 'Username and password are required' });
-  }
-  if (username.length < 3) {
-    return res.status(400).json({ success: false, error: 'Username must be at least 3 characters' });
-  }
-  if (password.length < 4) {
-    return res.status(400).json({ success: false, error: 'Password must be at least 4 characters' });
-  }
-
-  const db = loadUsers();
-  if (db.users.some((u) => u.username.toLowerCase() === username.toLowerCase())) {
-    return res.status(409).json({ success: false, error: 'User already exists' });
-  }
-
-  const newUser = {
-    username,
-    role: 'support',
-    salt: generateSalt(),
-    hash: hashPassword(password, generateSalt())
-  };
-  
-  // Fix: use the generated salt for hashing
-  const salt = generateSalt();
-  newUser.salt = salt;
-  newUser.hash = hashPassword(password, salt);
-  
-  db.users.push(newUser);
-  saveUsers(db);
-  
-  console.log(`[REGISTER] New user: ${username} (role: support)`);
-  
-  const token = createSession(newUser.username);
-  setSessionCookie(res, token);
-  return res.json({ success: true, user: publicUser(newUser) });
-});
-
 app.post('/api/auth/logout', (req, res) => {
   const cookies = parseCookies(req);
   const token = cookies[SESSION_COOKIE];

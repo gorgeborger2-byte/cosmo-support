@@ -76,14 +76,6 @@
     .login-error { min-height: 20px; margin-top: 10px; color: #fda4af; font-size: 12px; }
     .login-note { margin-top: 16px; color: var(--text3); font-size: 12px; line-height: 1.6; }
     .login-note code { color: #d8d1ff; }
-    
-    .register-toggle { text-align: center; margin-top: 16px; color: var(--text3); font-size: 13px; }
-    .register-toggle a { color: #b894ff; cursor: pointer; text-decoration: none; }
-    .register-toggle a:hover { text-decoration: underline; }
-    
-    .register-form { display: none; }
-    .register-form.show { display: block; }
-    .login-form.hide { display: none; }
   </style>
 </head>
 <body>
@@ -97,53 +89,27 @@
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <div class="login-wrap">
-  <div class="login-card">
-    <div class="login-form" id="loginFormContainer">
-      <form id="loginForm">
-        <div class="login-title">Cosmo Support</div>
-        <div class="login-sub">Sign in with your staff account.</div>
+  <form class="login-card" id="loginForm">
+    <div class="login-title">Cosmo Support</div>
+    <div class="login-sub">Sign in with your staff account.</div>
 
-        <div class="field">
-          <label for="username">Username</label>
-          <input id="username" name="username" autocomplete="username" required>
-        </div>
-
-        <div class="field">
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required>
-        </div>
-
-        <button class="login-btn" id="loginBtn" type="submit">Log In</button>
-        <div class="login-error" id="loginError"></div>
-      </form>
-      <div class="register-toggle">
-        Don't have an account? <a id="showRegister">Register here</a>
-      </div>
+    <div class="field">
+      <label for="username">Username</label>
+      <input id="username" name="username" autocomplete="username" required>
     </div>
-    
-    <div class="register-form" id="registerFormContainer">
-      <form id="registerForm">
-        <div class="login-title">Staff Registration</div>
-        <div class="login-sub">Create your support account.</div>
 
-        <div class="field">
-          <label for="regUsername">Username</label>
-          <input id="regUsername" name="username" autocomplete="username" required>
-        </div>
-
-        <div class="field">
-          <label for="regPassword">Password</label>
-          <input id="regPassword" name="password" type="password" autocomplete="new-password" required>
-        </div>
-
-        <button class="login-btn" id="registerBtn" type="submit">Register</button>
-        <div class="login-error" id="registerError"></div>
-      </form>
-      <div class="register-toggle">
-        Already have an account? <a id="showLogin">Log in</a>
-      </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
     </div>
-  </div>
+
+    <button class="login-btn" id="loginBtn" type="submit">Log In</button>
+    <div class="login-error" id="loginError"></div>
+
+    <div class="login-note">
+      Registration is disabled here. User creation and role management are available only in Owner/msd Admin Panel.
+    </div>
+  </form>
 </div>
 
 <script src="js/cosmic-bg.js"></script>
@@ -177,16 +143,6 @@ async function checkAlreadyLoggedIn() {
   } catch (_) {}
 }
 
-document.getElementById('showRegister').onclick = function() {
-  document.getElementById('loginFormContainer').classList.add('hide');
-  document.getElementById('registerFormContainer').classList.add('show');
-};
-
-document.getElementById('showLogin').onclick = function() {
-  document.getElementById('registerFormContainer').classList.remove('show');
-  document.getElementById('loginFormContainer').classList.remove('hide');
-};
-
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = document.getElementById('loginBtn');
@@ -206,35 +162,6 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const data = await resp.json();
     if (!resp.ok || !data.success) {
       errorEl.textContent = data.error || 'Login failed';
-      btn.disabled = false;
-      return;
-    }
-    window.location.href = 'dashboard.html';
-  } catch (_) {
-    errorEl.textContent = 'Network error. Try again.';
-    btn.disabled = false;
-  }
-});
-
-document.getElementById('registerForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = document.getElementById('registerBtn');
-  const errorEl = document.getElementById('registerError');
-  errorEl.textContent = '';
-  btn.disabled = true;
-
-  const username = document.getElementById('regUsername').value.trim();
-  const password = document.getElementById('regPassword').value;
-
-  try {
-    const resp = await cosmoFetch('/api/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
-    });
-    const data = await resp.json();
-    if (!resp.ok || !data.success) {
-      errorEl.textContent = data.error || 'Registration failed';
       btn.disabled = false;
       return;
     }
