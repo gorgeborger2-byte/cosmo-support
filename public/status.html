@@ -426,10 +426,16 @@ let drawerPinned = false;
 let lastDataUpdatedAt = null;
 let freshnessTimer = null;
 const hoverDrawerEnabled = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-const API_ENDPOINTS = [
-  { kind: 'api', url: cosmoApiUrl('/api/status') },
-  { kind: 'static', url: 'data/status.json' }
-];
+const isHostedPages = /github\.io$/i.test(window.location.hostname);
+const API_ENDPOINTS = isHostedPages
+  ? [
+      { kind: 'static', url: 'data/status.json' },
+      { kind: 'api', url: cosmoApiUrl('/api/status') }
+    ]
+  : [
+      { kind: 'api', url: cosmoApiUrl('/api/status') },
+      { kind: 'static', url: 'data/status.json' }
+    ];
 
 function getStatusClass(status) {
   const s = status.toLowerCase();
