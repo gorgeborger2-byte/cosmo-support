@@ -503,13 +503,11 @@ function isActiveStatus(status) {
 }
 
 function filterToActiveStates(results) {
-  console.log('filterToActiveStates: Input brands:', results?.length);
   const filtered = (results || [])
     .map(brand => {
       const filteredProducts = (brand.products || []).filter(p => isActiveStatus(p.status));
       const updatingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('updat')).length;
       const testingCount = filteredProducts.filter(p => p.status.toLowerCase().includes('test')).length;
-      console.log(`filterToActiveStates: ${brand.brand} - updating:${updatingCount}, testing:${testingCount}, filteredProducts:${filteredProducts.length}`);
       let state = 'Unknown';
       if (updatingCount > 0 && testingCount > 0) state = 'Updating + Testing';
       else if (updatingCount > 0) state = 'Updating';
@@ -523,7 +521,6 @@ function filterToActiveStates(results) {
       };
     })
     .filter(brand => brand.products.length > 0);
-  console.log('filterToActiveStates: Output brands:', filtered.length);
   return filtered.sort((a, b) => {
       const aBoth = a.updatingCount > 0 && a.testingCount > 0 ? 1 : 0;
       const bBoth = b.updatingCount > 0 && b.testingCount > 0 ? 1 : 0;
@@ -547,6 +544,7 @@ function formatAge(ms) {
 
 function updateFreshnessUI() {
   const ageEl = document.getElementById('dataAge');
+  if (!ageEl) return;
   if (!lastDataUpdatedAt) {
     ageEl.textContent = '—';
     ageEl.style.color = 'var(--text2)';
@@ -585,11 +583,8 @@ async function fetchAllStatuses() {
     const stamp = data.lastUpdated ? new Date(data.lastUpdated) : new Date();
     lastDataUpdatedAt = stamp.getTime();
     document.getElementById('lastUpdated').textContent = stamp.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
-    updateFreshnessUI();
   } catch(e) {
     showLoginRequired(12);
-    lastDataUpdatedAt = null;
-    updateFreshnessUI();
     const healthEl = document.getElementById('backendHealth');
     healthEl.textContent = 'Unavailable';
     healthEl.style.color = '#fda4af';
@@ -806,8 +801,6 @@ function resetCountdown() {
 
 // Start
 fetchAllStatuses();
-if (freshnessTimer) clearInterval(freshnessTimer);
-freshnessTimer = setInterval(updateFreshnessUI, 1000);
 </script>
 </body>
 </html>
