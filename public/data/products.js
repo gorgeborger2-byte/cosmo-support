@@ -5,14 +5,14 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['apex','eft','rust','dayz'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'Apex, EFT, Rust — ALL versions\nDayZ — 25H2 & 24H2 NOT supported',
+    supportedWindows: 'Apex, EFT, Rust (ALL)\nDayZ (25h2 & 24h2 not supported)',
     otherRequirements: [
       'UEFI BIOS',
       'Visuals installed (*visual)',
@@ -52,18 +52,18 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['warthunder','apex','all games'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'ENABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'All Windows versions EXCEPT 25H2\n(Warthunder & Apex)',
+    supportedWindows: 'Supports ALL windows except 25h2\n(Warthunder & Apex)',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       'Fastboot disabled in BIOS & Windows'
     ],
     fixes: [
@@ -94,41 +94,41 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['cod','all games','pubg'],
     requirements: {
-      'TPM': 'N/A (ENABLED for COD)',
+      'TPM': '(N/A) (ENABLED for COD)',
       'Secure Boot': 'DISABLED (except COD)',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'ENABLED (DEFAULT)'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
         title: 'Meltdown / Spectre Protection Error',
-        content: 'Download InSpectre, disable meltdown and spectre protection. Then go to C:\\ → find RSCFG folder → delete temp → restart PC and try again.',
+        content: 'Download InSpectre, disable meltdown and spectre protection. Then go to C:/ find RSCFG folder and delete temp. restart pc and try again.',
         links: ['https://www.guru3d.com/download/download-inspectre/']
       },
       {
         title: 'Blue Screens',
-        content: 'Disable the built-in spoofer.'
+        content: 'Disable build in spoofer'
       },
       {
         title: 'Failed to Load Driver',
-        content: 'Open CMD as admin and run sfc /scannow. Also confirm Core Isolation is disabled.',
+        content: 'Open CMD as admin run sfc /scannow also check core isolation to be disabled.',
         codeBlocks: ['sfc /scannow']
       },
       {
         title: 'Fatal Error — Engine Error',
-        content: 'Open RivaTuner and set detection level to "None".'
+        content: 'Open rivatuner and set detection level as none'
       },
       {
         title: 'PUBG Blackscreen',
-        content: 'Navigate to: C:\\(x86)\\Steam\\steamapps\\common\\PUBG\\TslGame\\Content\\Movies — delete the Movies folder.'
+        content: 'C:\\x86)\\Steam\\steamapps\\common\\PUBG\\TslGame\\Content\\Movies delete Movies folder.'
       }
     ]
   },
@@ -138,18 +138,18 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['all games','eac'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
@@ -162,15 +162,15 @@ const PRODUCTS = [
       },
       {
         title: 'Loader Closes at 100%',
-        content: 'Sync your PC time.'
+        content: 'Sync PC time'
       },
       {
-        title: 'bedaisy.sys / easyanticheat.sys Error',
-        content: 'Run the Loader BEFORE launching the game.'
+        title: 'bedaisy.sys / easyanticheat.sys Error Fix',
+        content: 'Run Loader before launching the game.'
       },
       {
         title: 'I2 Error Fix',
-        content: 'Check all anti-virus/anti-cheat software again. Ensure Core Isolation is disabled, Visuals are installed, and the loader is run as admin.'
+        content: 'Check all anti-virus/anti-cheats again, also ensure core isolation is disabled. Visuals are installed and the loader must be run as admin.'
       }
     ]
   },
@@ -180,35 +180,35 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['cod','all games'],
     requirements: {
-      'TPM': 'N/A (enabled for COD)',
-      'Secure Boot': 'DISABLED (enabled for COD)',
+      'TPM': '(N/A) (enabled for cod)',
+      'Secure Boot': 'DISABLED (enabled for cod)',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'Windows 10 22H2 — Windows 11 23H2\nCOD only: supports 24H2 and 25H2',
+    supportedWindows: 'Windows 10 22h2 - Windows 11 23h2\nOnly COD supports 24h2 and 25h2',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
-        title: 'Loading mem_ctx Error',
-        content: 'Uninstall ALL Anti-Cheats and Anti-Virus software, including: FaceIT, Vanguard, Anti-Cheat Expert, Kaspersky, McAfee, Malwarebytes.'
+        title: 'Loading mem_ctx',
+        content: 'Ensure that all Anti-Cheats and Anti-Virus software are uninstalled, including programs like: FaceIT, Vanguard, Anti-Cheat Expert and Kaspersky, McAfee, Malwarebytes.'
       },
       {
         title: 'Context Error #13 / Error 0x2',
-        content: 'Unsupported Windows version.'
+        content: 'Unsupported windows version.'
       },
       {
         title: 'Ntherr / Nreq Error',
-        content: 'Check if the customer is not on a Virtual Machine or Virtual Desktop.'
+        content: 'Check if customer is not on a Virtual Machine/Desktop.'
       },
       {
-        title: 'Connection Errors — Timeout / Couldn\'t Resolve Hostname',
-        content: 'Use a VPN like ProtonVPN or Windscribe.'
+        title: 'Connection errors timeout reached/couldn't resolve hostname',
+        content: 'Use a VPN like Warp/Tunnelbear.'
       }
     ]
   },
@@ -218,36 +218,36 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['all games'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
-      'Virtualization': 'N/A',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'ENABLED (Default)'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
         title: 'Invalid Processed Data 0x0',
-        content: 'Use a VPN — this is caused by ISP blocking the connection.'
+        content: 'Use a VPN to fix, it\'s caused by ISP blocking the connection.'
       },
       {
         title: 'Error #3B000000',
-        content: 'Turn off Core Isolation and run in CMD as admin:',
+        content: 'Turn off Core Isolation and run this command in CMD as admin:',
         codeBlocks: ['bcdedit /set hypervisorlaunchtype off']
       },
       {
-        title: 'Error Code 0x1 / 0x2',
+        title: 'Error Code 0x1/0x2',
         content: 'Uninstall any Anti-Cheat and restart your PC.'
       },
       {
-        title: 'Error Code 0x3 / 0x7',
-        content: 'Spoofed before injecting. Restart PC, then inject first.'
+        title: 'Error Code 0x3/0x7',
+        content: 'Spoofed before inject, restart PC then inject first.'
       }
     ]
   },
@@ -257,36 +257,36 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['rust','apex','pubg','dark and darker'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'ENABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'ENABLED (Default)'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows version',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       'Nvidia/AMD overlay',
-      'Steelseries for: Rust, Apex, Dark and Darker, The Midnight Walkers, PUBG'
+      'Steelseries for the following games: Rust, Apex, Dark and Darker, The Midnight Walkers and PUBG'
     ],
     fixes: [
       {
-        title: 'Please Download and Install the Latest vc_redist Libs',
+        title: 'Please download and install the latest vc_redist libs',
         content: 'Use command:',
         commands: ['*kaneamdmenufix']
       },
       {
         title: 'SVM/VMX Error',
-        content: 'Disable Windows PIN (*pin command), then follow *iobit command.',
+        content: 'Disable windows pin. (*pin command) after follow *iobit command.',
         commands: ['*pin', '*iobit'],
         links: ['https://www.youtube.com/watch?v=L-55o0UnHFU']
       },
       {
-        title: 'No Menu',
-        content: 'Update all GPU and Windows drivers. Ensure all visuals are installed. Disable all other overlays. Do NOT run Steam or GeForce Experience during injection.'
+        title: 'No menu',
+        content: 'Update all drivers for GPU, Windows and make all visuals are installed. Disable all other overlays. Also don\'t run steam or the game itself as admin!'
       }
     ]
   },
@@ -296,34 +296,34 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['eft','arc raiders','all games'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'ENABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'ENABLED (Default)'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows version',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
-      'EFT Chams: Press F1 in Main Menu to inject',
-      'ARC Raiders — Steam only'
+      'Core Isolation off',
+      'EFT CHAMS PRESS F1 IN MAIN MENU TO INJECT',
+      'ARC Raiders - Steam only'
     ],
     fixes: [
       {
-        title: 'Steelseries Setup',
-        content: 'Use steelseries.com/gg:\nGENERAL → General section, enable Sonar. Then go to SONAR → Shortcuts tab, bind "F7" to Master - Volume Up. Press this bind before injection.'
+        title: 'Steelseries',
+        content: 'You need to use steelseries.com/gg: GENERAL > General section, turn on Sonar, then go to the SONAR > Shortcuts tab, put the "F7" key on the Master - Volume Up, you need to press this bind before injection.'
       },
       {
         title: 'SVM/VMX Error',
-        content: 'Disable Windows PIN (*pin command), then follow *iobit command.',
+        content: 'Disable windows pin. (*pin command) after follow *iobit command',
         commands: ['*pin', '*iobit']
       },
       {
-        title: 'No Menu',
-        content: 'Update all GPU and Windows drivers. Ensure all visuals are installed. Disable all other overlays.'
+        title: 'No menu',
+        content: 'Update all drivers for GPU, Windows and make all visuals are installed. Disable all other overlays. Also don\'t run steam or the game itself as admin!'
       }
     ]
   },
@@ -333,26 +333,24 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['all games'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'ENABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
-      'AMD: ensure NX Mode in BIOS is enabled (if getting hypervisor error after applying the fix)'
+      'Core Isolation off',
+      'For AMD ensure NX Mode in bios is enabled (when getting hypervisor error after applying the fix).'
     ],
     fixes: [
       {
-        title: 'No Menu / BSOD',
-        content: 'Send the latest loader from: https://t.me/fecloaders\nIf still BSOD with latest loader, send *delay command. Have them add this file to the loader and run it.',
-        commands: ['*delay'],
-        links: ['https://t.me/fecloaders']
+        title: 'No menu / BSOD',
+        content: 'Send them new loader from: https://t.me/fecloaders\nIf still BSOD with latest loader, send them *delay command.\nHave them add this file to the loader, and run the file.'
       },
       {
         title: 'Still BSOD? Get Minidump File',
@@ -367,36 +365,36 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['all games'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
-        title: 'Mapping Driver Failed',
-        content: 'Disable all anti-cheats & anti-virus. Use *defendercontrol to ensure everything is disabled.',
+        title: 'Mapping driver failed',
+        content: 'Disable all anti-cheats & anti-virus. Feel free to use *defendercontrol to make sure all is disabled.',
         commands: ['*defendercontrol']
       },
       {
-        title: 'Loader Connection Issues',
+        title: 'Loader connection issues',
         content: 'Use PROTON VPN.'
       },
       {
         title: 'Crashing / BSOD',
-        content: 'Make sure the customer selected the download with NO spoofer. EAC spoofer is not working. If they want the BE spoofer, have them disable TPM.'
+        content: 'Make sure they selected the download with no-spoofer. EAC spoofer is not working. If they want to use the BE spoofer, have them disable TPM.'
       },
       {
-        title: 'Overlay Issues',
-        content: 'Disable ALL overlays: Discord, Steam, Medal, Nvidia/AMD, etc.'
+        title: 'Overlay',
+        content: 'Disable all overlays! Discord, Steam, Medal, Nvidia / AMD etc.'
       }
     ]
   },
@@ -406,28 +404,28 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['marvel','pubg','ow2','naraka','arc raiders'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions EXCEPT:\nMarvel, PUBG, OW2 and Naraka: 22H2 W10 only',
+    supportedWindows: 'Supports ALL windows versions except:\nMarvel, PUBG, OW2 and Naraka 22h2 w10 only',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
-      'ARC: Steam only, DX12 must be used'
+      'Core Isolation off',
+      'ARC: is steam only, and DX12 must be used'
     ],
     fixes: [
       {
-        title: 'Error Code 2145 / 2146',
-        content: 'Tell a Senior to contact the developer — the uploaded file was corrupted during upload.'
+        title: 'Error code 2145/2146',
+        content: 'Tell a Senior to contact developer, the uploaded file was corrupted during upload.'
       },
       {
-        title: 'Crashing Loader',
-        content: 'Paste this code into CMD as admin, then restart PC. Change "aaaaa14" to a custom name (all lowercase letters only):',
+        title: 'Crashing loader',
+        content: 'Paste this code into cmd as an administrator, then restart your computer. Change the "aaaaa14" part here as you wish, but all letters must be lowercase.',
         codeBlocks: ['wmic computersystem where name="%computername%" call rename name="aaaaa14"']
       }
     ]
@@ -438,27 +436,27 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['dayz','roblox','all games'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
-      'Virtualization': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions\nDayZ: 25H2 & 24H2 NOT supported',
+    supportedWindows: 'Supports ALL windows versions\nDayZ 25h2 & 24h2 not supported',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
-        title: 'Nvidia Overlay & Overwolf (AMD Users)',
+        title: 'Nvidia overlay & Overwolf for AMD users',
         content: 'Disable Nvidia overlay and Overwolf for AMD users.'
       },
       {
-        title: 'Roblox — Download via Fishstrap',
-        content: 'Download the game from https://www.fishstrap.app to prevent silent beta updates that break the product.',
+        title: 'Roblox',
+        content: 'Download the game from https://www.fishstrap.app where it prevents downloading any silent beta updates every few hours which breaks the product.',
         links: ['https://www.fishstrap.app']
       }
     ]
@@ -469,18 +467,18 @@ const PRODUCTS = [
     category: 'Spoofer',
     tags: ['spoofer','all games'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
       'Virtualization': 'ENABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       '*defendercontrol'
     ],
     fixes: [
@@ -490,9 +488,8 @@ const PRODUCTS = [
         commands: ['*cosmohyperv']
       },
       {
-        title: 'Loader Stuck at 11%',
-        content: 'Run in PowerShell as admin:',
-        codeBlocks: ['Get-Volume | Where-Object DriveLetter | ForEach-Object { $drive = $_.DriveLetter; Write-Host "Running chkdsk on drive $drive"; chkdsk "$drive`:" /f /r }']
+        title: 'Loader stuck at 11%',
+        content: 'Run in powershell as admin:\nGet-Volume | Where-Object DriveLetter | ForEach-Object { $drive = $_.DriveLetter; Write-Host "Running chkdsk on drive $drive..."; chkdsk "$drive`:" /F }'
       }
     ]
   },
@@ -502,24 +499,23 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['all games'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
-      'Virtualization': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
-        title: 'Driver Initialization Error 1',
-        content: 'Download and run this file, then restart your PC. Also disable Core Isolation and Vulnerable Driver Blocking in Windows Defender. If that doesn\'t help, click "Get Support" in the loader, select "Driver Error," and restart PC.',
-        links: ['https://mega.nz/file/uURS0ZgL#gn9i_rBW__80V9uzexA_Cr2vPUPNGQK2aif4qtevXHs']
+        title: 'Driver initialization Error 1',
+        content: 'You need to download this file https://mega.nz/file/uURS0ZgL#gn9i_rBW__80V9uzexA_Cr2vPUPNGQK2aif4qtevXHs . Run the file and restart your PC, then try to run the cheat again. You also need to disable core isolation and Vulnerable Driver Blocking in Windows Defender; And if that didn\'t help, then click "Get Support" in the loader, select "Driver Error," and restart PC'
       }
     ]
   },
@@ -529,30 +525,23 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['arc raiders','all games'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF'
+      'Core Isolation off'
     ],
     fixes: [
       {
-        title: 'Injection Failed (0x1394) — ARC Raiders',
-        content: 'Close Chrome and try another browser (Opera recommended). If still not working:',
-        codeBlocks: [
-          '1. Download Overwolf: https://download.overwolf.com/install/Download?utm_content=new-light&utm_source=web_app_store',
-          '2. Go to Task Manager → Startup apps → disable EVERYTHING. Restart PC.',
-          '3. Ensure all game launchers are completely closed (EA/STEAM/BNET).',
-          '4. Open Overwolf and disable all its overlays. Minimize to icon tray.',
-          '5. Open loader as admin and inject.'
-        ]
+        title: 'Injection failed (0x1394) (ARC Raiders)',
+        content: 'Close chrome and try with another browser, opera recommended\n- If still not working try this: 1)https://download.overwolf.com/install/Download?utm_content=new-light&utm_source=web_app_store 2) Go to task manager> startup apps and disable EVERYTHING. Restart PC after.\n3) Make sure all game launchers are completely closed>EA/STEAM/BNET.\n4) Open overwolf and disable all its overlays. Once done, minimize it to icon tray. \n5) Open loader as admin and inject the cheat, wait for success message (HANDLE SUCCESSFULLY SENT) \n6) Once done, open steam and launch game'
       }
     ]
   },
@@ -569,30 +558,30 @@ const PRODUCTS = [
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DEFAULT'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       '*visual',
       '*defendercontrol',
       '*coreisoval',
       'Medal.TV overlay',
       'GPU Drivers up to date',
-      'HYPER-V ON (in Windows Features)'
+      'HYPER V ON(IN WINDOWS FEATURES)'
     ],
     fixes: [
       {
-        title: 'No Menu',
-        content: 'Install Medal.TV and ensure "Record with Medal" is ON. Make sure Valorant Launcher is NOT open during inject.',
+        title: 'No menu',
+        content: 'Install Medal.TV and make sure record with medal is on.\nPlease make sure that Valorant Launcher is not open during inject.',
         commands: ['*coreisoval']
       },
       {
-        title: 'Still No Menu — Generate bundle.enc',
-        content: 'Download this tool, run it as admin. It will create a file named bundle.enc. Send it in the ticket and @ Seniors to forward to the developer.',
+        title: 'Still no menu?',
+        content: 'Download this: https://gofile.io/d/sOW8lX and have them run it as admin. It will create a file named bundle.enc, have them send it in the ticket and @ Seniors to forward to the developer.',
         links: ['https://gofile.io/d/sOW8lX']
       },
       {
-        title: 'Secure Boot Policy Fix',
-        content: 'Go to BIOS → Secure Boot → Key Management → reset/restore secure boot keys.'
+        title: 'Secure Boot policy fix',
+        content: 'Go to BIOS -> Secure Boot -> Key Management -> Forbidden Signatures(dbx) -> Delete, then press No and delete signatures that you have there (it should be 2-5 signatures) \nMake sure secure boot mode: Custom\n\nDon\'t press DELETE ALL SIGNATURES or DELETE ALL\n\nYou should delete 1 by 1.'
       }
     ]
   },
@@ -609,40 +598,35 @@ const PRODUCTS = [
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       '*visual',
       '*defendercontrol',
-      'Core Isolation DISABLED',
-      'Reputation-based protection OFF',
-      'Exploit protection OFF',
+      'Core Isolation disabled',
+      'Reputation based protection too',
+      'Exploit too',
       'GPU Drivers up to date',
       'Run loader as admin',
       'DISABLE ALL OVERLAYS',
-      'Set DX11 in Overwatch 2'
+      'Put DX11 in overwatch 2'
     ],
     fixes: [
       {
-        title: 'Latest Loader',
-        content: 'Download from:',
-        links: ['https://mega.nz/folder/VUdnFYCC#Y3MUZeXJl_vkQt5hjvgvXw']
+        title: 'Latest loader',
+        content: 'https://mega.nz/folder/VUdnFYCC#Y3MUZeXJl_vkQt5hjvgvXw'
       },
       {
-        title: 'External Overlay Error Fix',
-        content: 'Perform all of the following:\n1. Disable Discord overlay (Settings → Game Activity → Overlay toggle)\n2. Close OBS / switch from Game Capture to Window Capture\n3. Disable GeForce Experience overlay (Alt+Z → Settings → In-Game Overlay → Off)\n4. Disable Xbox Game Bar (Windows Settings → Gaming → Xbox Game Bar → Off)'
+        title: 'Fix to External Overlay error',
+        content: '1. Disable Discord overlay (Settings → Game Activity → Overlay toggle)\n2. Close OBS / switch from Game Capture to Window Capture\n3. Disable GeForce Experience overlay (Alt+Z → Settings → In-Game Overlay → Off)\n4. Disable Xbox Game Bar (Windows Settings → Gaming → Xbox Game Bar → Off)'
       },
       {
-        title: 'Graphic Game Crash',
-        content: 'Send the following 2 screenshots to support:',
-        links: [
-          'Graphics: https://imgur.com/a/Jf9L64C',
-          'Overlay crash: https://imgur.com/a/ixjO37i'
-        ]
+        title: 'Graphic game crash',
+        content: 'Sent the following 2 screenshots:\nGraphics: https://imgur.com/a/Jf9L64C\nOverlay crash: https://imgur.com/a/ixjO37i'
       },
       {
-        title: 'Aimbot or ESP Not Working',
-        content: 'Select the default preset in the menu for aimbot. For ESP: Reload the cheat within the menu.'
+        title: 'Aimbot or ESP not working',
+        content: 'Select the default preset in the menu for aimbot & for esp: Reload the cheat within the menu.'
       }
     ]
   },
@@ -652,41 +636,38 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['delta force'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'ENABLED',
       'Virtualization': 'ENABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       '*defendercontrol',
-      'Steam only — DX12 only'
+      'Steam only',
+      'DX12 only'
     ],
     fixes: [
       {
-        title: 'Before Injecting — Required Settings',
-        content: 'In Delta Force, set display to WF/Borderless. Turn OFF Super Resolution/Upscaling.'
+        title: 'Before injecting ensure that',
+        content: 'In Delta Force the display is set to WF/Borderless.\nSuper resolution/upscaling OFF'
       },
       {
-        title: 'Loader Crashes After Key Verification',
-        content: 'Install the latest Microsoft Visual C++ Redistributable (both x86 and x64):',
-        links: [
-          'https://aka.ms/vs/17/release/vc_redist.x64.exe',
-          'https://aka.ms/vs/17/release/vc_redist.x86.exe'
-        ]
+        title: 'Loader crashes after key verification',
+        content: 'Install the latest Microsoft Visual C++ Redistributable packages (both x86 and x64):\nhttps://aka.ms/vs/17/release/vc_redist.x64.exe\nhttps://aka.ms/vs/17/release/vc_redist.x86.exe'
       },
       {
         title: 'Random Crashes / Freezes',
-        content: 'Set the lowest graphics settings, set a stable FPS cap. Disable Super Resolution / DLSS / FSR.'
+        content: 'Put lowest graphics, set a stable FPS cap, Disable Super Resolution / DLSS / FSR.'
       },
       {
-        title: 'No Menu — Generate bundle.enc',
-        content: 'Download this tool, run as admin. It creates bundle.enc — send it in the ticket and @ Seniors.',
+        title: 'No menu',
+        content: 'Download this: https://gofile.io/d/sOW8lX and have them run it as admin. It will create a file named bundle.enc, have them send it in the ticket and @ Seniors to forward to the developer.',
         links: ['https://gofile.io/d/sOW8lX']
       }
     ]
@@ -697,40 +678,37 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['fortnite','rust','apex','abi','arc raiders'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
-      'Virtualization': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DEFAULT'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
-      'ALL NEED MEDAL.TV',
-      'Hyper-V enabled for: ARC Raiders, Valorant, Fortnite and Apex'
+      'Core Isolation off',
+      'ALL NEED Medal.TV',
+      'Hyper V enabled for: ARC Raiders, Valorant, Fortnite and Apex'
     ],
     fixes: [
       {
         title: 'BSOD for Apex',
-        content: 'Download from the link below. Ensure file path is: C:\\Program Files (x86)\\Windows Kits\\10\\ — Always generate a new build.',
-        links: ['https://go.microsoft.com/fwlink/?linkid=2335869']
+        content: 'https://go.microsoft.com/fwlink/?linkid=2335869\nEnsure file path is: C:\\Program Files (x86)\\Windows Kits\\10\\\nAlso make sure to always generate new build.'
       },
       {
-        title: 'Still No Menu or Errors — Generate bundle.enc',
-        content: 'Download this tool, run as admin. It creates bundle.enc — send in ticket and @ Seniors.',
-        links: ['https://gofile.io/d/sOW8lX']
+        title: 'Still no menu or errors?',
+        content: 'Download this: https://gofile.io/d/sOW8lX and have them run it as admin. It will create a file named bundle.enc, have them send it in the ticket and @ Seniors.'
       },
       {
-        title: 'Arena Breakout (ENC: ON)',
-        content: 'Too many reports — change account. It will go away after 12-24 hours.'
+        title: 'Arena Breakout ENC:ON',
+        content: 'To many reports, change account. It will go away after 12-24hours.'
       },
       {
-        title: 'Rust & FN Requirement',
-        content: 'Install required package:',
-        links: ['https://go.microsoft.com/fwlink/?linkid=2335869']
+        title: 'Rust & FN requirement',
+        content: 'https://go.microsoft.com/fwlink/?linkid=2335869'
       }
     ]
   },
@@ -747,42 +725,37 @@ const PRODUCTS = [
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       '*pin removed for TPM',
-      'HVIX & HVAX in system32 (usually only removed if user used Kane before)'
+      'HVIX & HVAX in system32 (usually only removed if user used Kane before). '
     ],
     fixes: [
       {
-        title: 'Framework Error',
-        content: 'Install .NET Runtime (both x64 and x86):',
-        links: [
-          'https://builds.dotnet.microsoft.com/dotnet/Runtime/7.0.5/dotnet-runtime-7.0.5-win-x64.exe',
-          'https://builds.dotnet.microsoft.com/dotnet/Runtime/7.0.5/dotnet-runtime-7.0.5-win-x86.exe'
-        ]
+        title: 'Framework error',
+        content: 'https://builds.dotnet.microsoft.com/dotnet/Runtime/7.0.5/dotnet-runtime-7.0.5-win-x64.exe\nhttps://builds.dotnet.microsoft.com/dotnet/Runtime/7.0.5/dotnet-runtime-7.0.5-win-x86.exe'
       },
       {
-        title: 'No ESP — DayZ & EFT',
-        content: 'DayZ: Settings → Video → Disable "POSTPROCESS ANTIALIASING" & "HARDWARE ANTIALIASING"\nEFT: Settings → Game → Find "Autoclean RAM" and disable it.'
+        title: 'No ESP DayZ & EFT',
+        content: 'DayZ: settings > video > Disable: "POSTPROCESS ANTIALIASING" & "HARDWARE ANTIALIASING"\nEFT: Settings > game > find the option "Autoclean RAM" disable it. '
       },
       {
         title: 'Keybinds for Rust Lite',
-        content: 'F5 for ESP, F6 for no recoil, F9 for remove walls.'
+        content: 'F5 for ESP, F6 for no recoil and F9 for remove walls.'
       },
       {
-        title: 'Legacy BIOS / Boot Partition Not GPT',
-        content: 'Follow this tutorial:',
-        links: ['https://youtu.be/a54sqzcDrUU?si=Lj2PE-bUK2bLBMEg']
+        title: 'Legacy BIOS/ Boot part not GPT',
+        content: 'https://youtu.be/a54sqzcDrUU?si=Lj2PE-bUK2bLBMEg'
       },
       {
-        title: 'Errors Requiring Windows Reinstall',
-        content: 'Error 1, 3, 4, 5, 6, 7 (all related to boot partitions).'
+        title: 'Errors that require reinstall windows',
+        content: 'Error 1,3,4,5,6,7 (all related to boot partitions)'
       },
       {
-        title: 'HVIX/HVAX Not Found',
+        title: 'HVIX/HVAX not found',
         content: 'Run sfc /scannow in CMD as admin.',
         codeBlocks: ['sfc /scannow']
       }
@@ -794,18 +767,18 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['warthunder','all games'],
     requirements: {
-      'TPM': 'N/A',
+      'TPM': '(N/A)',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'DISABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'Windows 10 22H2 → Windows 11 23H2',
+    supportedWindows: 'Windows 10 22H2 > Windows 11 23H2',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       '*defendercontrol'
     ],
     fixes: [
@@ -814,16 +787,8 @@ const PRODUCTS = [
         content: 'Must be run in DX11. Add -D3D11 to launch parameters.'
       },
       {
-        title: 'Connection Issue',
-        content: 'Download and run the network manager tool:',
-        codeBlocks: [
-          '1. Download: https://pcheck.ru/files/networkmanager.zip',
-          '2. Run it.',
-          '3. Select "Find the Best IP" option.',
-          '4. Wait for the check to complete.',
-          '5. Click "Apply".'
-        ],
-        links: ['https://pcheck.ru/files/networkmanager.zip']
+        title: 'Connection issue?',
+        content: 'https://pcheck.ru/files/networkmanager.zip\n⏺ Run it.\n⏺ Select the "Find the Best IP" option.\n⏺ Wait for the check to complete.\n⏺ Click "Apply".'
       }
     ]
   },
@@ -835,26 +800,26 @@ const PRODUCTS = [
     requirements: {
       'TPM': 'DISABLED (except COD)',
       'Secure Boot': 'DISABLED (except COD)',
-      'Virtualization': 'N/A',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       '*defendercontrol'
     ],
     fixes: [
       {
-        title: 'Marvels Fix',
-        content: 'Run Notepad as admin BEFORE injecting the cheat.'
+        title: 'Marvels',
+        content: 'Run a notepad as admin before injecting cheat.'
       },
       {
-        title: 'Marvels 25H2',
-        content: 'Unstable on 25H2 — warn the customer.'
+        title: 'Marvels 25h2',
+        content: 'Marvels 25h2 unstable.'
       }
     ]
   },
@@ -864,34 +829,34 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['fivem','gta'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
-      'Virtualization': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       '*defendercontrol',
-      'Steam overlay ENABLED',
-      'FiveM version — Release'
+      'Steam overlay enabled',
+      'FiveM version release'
     ],
     fixes: [
       {
-        title: 'Injection Error 1–4',
-        content: 'Error 1-4: Download/Timeout Error → Use a VPN\nError 2: Integrity Error → Reinstall FiveM\nError 3: Injection Error → Anti-cheats/Anti-virus blocking injection'
+        title: 'Injections issues',
+        content: 'Error 1-4: Download/Timeout Error | Fix : Use a VPN\nError 2 : Integrity Error | Fix : Reinstall FiveM\nError 3 : Injection Error | Anti-cheats / Anti-virus blocking the injection.'
       },
       {
-        title: 'Cheat Issues — Display Settings',
-        content: 'Display must NOT be Fullscreen Exclusive (causes crashes). Steam must be open with Steam overlay enabled.'
+        title: 'Cheat issues',
+        content: 'Display Settings can\'t be Fullscreen Exclusive, it will cause crashes.\nSteam needs to be open with steam overlay enabled.'
       },
       {
-        title: 'How to Inject',
-        content: 'Open FiveM with Steam running in background → Open loader and log in with key → Inject the cheat. Users can also inject inside a server (Open game → Join server → Inject).'
+        title: 'How to inject',
+        content: 'Open FiveM with steam running on background (just need to be open) > open the loader and log in using the key > inject the cheat and done! Users can inject inside of a server too (Open game > Join server > Inject)'
       }
     ]
   },
@@ -901,38 +866,36 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['all games','spoofer'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
-      'Virtualization': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'UEFI BIOS',
+      'UEFI Bios',
       'Visuals installed (*visual)',
-      'Core Isolation OFF',
+      'Core Isolation off',
       '*defendercontrol'
     ],
     fixes: [
       {
-        title: 'Fatal Error — Connection Error',
-        content: 'Open Date and Time Settings and sync your PC time.'
+        title: 'Fatal error! Connection error',
+        content: 'Open date and time settings, sync pc time.'
       },
       {
         title: 'BSOD',
-        content: 'Disable all anti-virus using:',
-        links: ['https://antivirus-removal-tool.com/'],
-        codeBlocks: ['If issue persists, uninstall mouse/keyboard software (Razer, Armory Crate).']
+        content: 'Disable all anti-virus, you can use this: https://antivirus-removal-tool.com/\nIf issue persists, uninstall any mouse/keyboard software. (Razer, Armory Crate)'
       },
       {
-        title: '2 Beeps When Pressing F2 & Game Crashes',
-        content: 'Remove all modifications including Reshade/Redux. Reinstall the game with Revo-Uninstaller if issue persists.'
+        title: '2 Beeps when pressing F2 and game crashes',
+        content: 'Remove all modifications, including Reshade / Redux.\nReinstall the game if the issue persists with Revo-Uninstaller. '
       },
       {
-        title: 'Status 502 — Internal Server Error',
-        content: 'Server is down. Switch servers:\n1. Create a shortcut of the loader on your desktop\n2. Open Properties → in the Target line, add at the end: –diagnostic\n3. Reopen the shortcut loader → select a different server → try again.'
+        title: 'Status 502 [Internal server error]',
+        content: 'Server is down, change the server with by doing this:\nCreate shortcut on desktop of the loader, open properties > on the line of target: add at the end: –diagnostic \nReopen the shortcut loader, select a different server and try again.'
       }
     ]
   },
@@ -942,50 +905,51 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['all games','arc raiders','steam'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
-      'Virtualization': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'Use Default'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'ALL ANTI-VIRUS OFF (use *defendercontrol)',
-      'Windows Defender, SmartScreen, Core Isolation disabled',
-      'Disable ALL overlays (Discord, Nvidia, Overwolf, Reshade, RivaTuner)',
-      'Must run Steam as admin — NO launch parameters',
-      'Disable Frame Generation and Nvidia Reflex in games that support it',
-      'No Nvidia filters',
-      'STEAM ONLY (except ARC Raiders)',
-      'Close background apps / disable in startup',
+      'ALL ANTI-VIRUS OFF',
+      'Windows Defender-Smartscreen-Core isolation-',
+      '(Use *defendercontrol)',
+      'Disable all overlays! ',
+      '(Discord,Nvidia,Overwolf,Reshade,RivaTuner)',
+      'Must run steam as admin! Don\'t use any launch parameters! (Right click the game > properties to check).',
+      'Disable Frame Generation and Nvidia Reflex in games that support it. (Check game settings).',
+      'Also don\'t use any Nvidia filters.',
+      'Product is STEAM ONLY. Except ARC Raiders',
+      'Close background apps or disable in startup.',
       'Visuals installed (*visual)',
-      'Windows up to date',
-      'GPU drivers up to date'
+      'Windows up to date.',
+      'GPU driver up to date.'
     ],
     fixes: [
       {
-        title: 'Failed to Stream — Check Connection',
+        title: 'Failed to stream please check connection',
         content: 'Use a VPN.'
       },
       {
-        title: 'Extra Step — The Isle Evrima',
-        content: 'Delete: %localappdata%\\TheIsle\\Saved folder.',
+        title: 'Extra step The Isle Evrima',
+        content: 'Delete %localappdata%\\TheIsle\\Saved Folder',
         codeBlocks: ['%localappdata%\\TheIsle\\Saved']
       },
       {
-        title: 'Extra Step — ARC Raiders',
-        content: 'Delete: %localappdata%\\PioneerGame\\Saved folder.',
+        title: 'Extra step Arc Raiders',
+        content: 'Delete %localappdata%\\PioneerGame\\Saved Folder',
         codeBlocks: ['%localappdata%\\PioneerGame\\Saved']
       },
       {
-        title: 'Troubleshoot Tool',
-        content: 'Run the troubleshoot tool:',
-        links: ['https://cdn.discordapp.com/attachments/1459056826317537397/1460873272760602848/Troubleshoot.exe']
+        title: 'Troubleshoot tool',
+        content: 'Run the troubleshoot tool: https://cdn.discordapp.com/attachments/1459056826317537397/1460873272760602848/Troubleshoot.exe'
       },
       {
-        title: 'Failed to Stream — Set DNS',
-        content: 'Set DNS to Cloudflare (1.1.1.1).'
+        title: 'Failed to Stream',
+        content: 'Set DNS to Cloudflare.'
       }
     ]
   },
@@ -995,43 +959,42 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['ark','r6','siege','spoofer'],
     requirements: {
-      'TPM': 'N/A',
-      'Secure Boot': 'N/A',
-      'Virtualization': 'N/A',
+      'TPM': '(N/A)',
+      'Secure Boot': '(N/A)',
+      'Virtualization': '(N/A)',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
-      'Reputation-based protection OFF',
-      'Core Isolation OFF',
-      'Exploit protection OFF (use *defendercontrol)',
-      'ARK: Steam/Epic only',
+      'Reputation based protection,',
+      'Core Isolation and Exploit off.',
+      '(Use *defendercontrol)',
+      'ARK: STEAM/EPIC ONLY',
       'Visuals installed (*visual)',
-      'GPU drivers up to date'
+      'GPU drivers up to date.'
     ],
     fixes: [
       {
         title: 'Overlay for ARK',
-        content: 'Use Legacy Discord overlay (enable overlay OFF).'
+        content: 'Legacy overlay discord (Enable overlay off)'
       },
       {
         title: 'Overlay for R6',
-        content: 'Use Nvidia or AMD Metrics Overlay.'
+        content: 'Nvidia or AMD (Metrics Overlay)'
       },
       {
-        title: 'Loader Not Opening',
-        content: 'Sync PC time and use Warp VPN. Also check installed programs for anti-virus.'
+        title: 'Loader not opening',
+        content: 'Sync PC Time & Use Warp VPN.\n(Also check installed programs for anti-virus) '
       },
       {
-        title: 'Windows 11 Fix for Spoofer',
-        content: 'All Windows 11 users must run this to avoid BSOD:\nExtract the file, run as admin, click Yes to all. Restart PC then clean/spoof.',
-        links: ['https://gofile.io/d/qVXmXC']
+        title: 'W11 fix for spoofer',
+        content: 'https://gofile.io/d/qVXmXC\nAll windows 11 users must run this to avoid BSOD\'s. \nJust tell them to extract the file, run as admin and click yes to all.\nRestart PC and then obviously clean if needed cleaning, and spoof.'
       },
       {
-        title: 'For Spoofer — Delete Last 2 Windows Security Updates',
-        content: 'Windows Update → Update History → Uninstall Updates → Look for Security Updates → Uninstall the last 2.'
+        title: 'For spoofer',
+        content: 'ALSO DELETE LAST 2 WINDOWS SECURITY UPDATES!\n(Windows Update > Update History > Uninstall Updates)\nLook for Security updates and uninstall.'
       }
     ]
   },
@@ -1041,57 +1004,49 @@ const PRODUCTS = [
     category: 'Cheat',
     tags: ['valorant','all games'],
     requirements: {
-      'TPM': 'N/A (ON for games that require it)',
+      'TPM': '(N/A) ON for games that require it',
       'Secure Boot': 'DISABLED',
       'Virtualization': 'ENABLED',
       'Windows Defender': 'DISABLED',
       'Windows Firewall': 'DISABLED',
       'Exploit Protection': 'DISABLED'
     },
-    supportedWindows: 'ALL Windows versions',
+    supportedWindows: 'Supports ALL windows versions',
     otherRequirements: [
       '*visual for all visuals',
-      'Hyper-V enabled in Windows Features',
-      'BIOS: UEFI & Disks GPT',
-      'All anti-virus uninstalled (VGK, FaceIT, McAfee etc.)',
-      'Core Isolation DISABLED'
+      'Hyper-V enabled in win features',
+      'Bios UEFI & Disks GPT',
+      'All antivirus uninstalled (VGK, FaceIT, McAfee etc)',
+      'Core isolation disabled'
     ],
     fixes: [
       {
         title: 'InitWindows Error!',
-        content: 'Press F2 for injector ONLY AFTER you see the Discord overlay banner. DO NOT be in a Discord call when using Discord overlay. Disable Legacy overlay.'
+        content: 'Press F2 for injector only after you see discord overlay banner.\nALSO DON'T BE IN A DISCORD CALL WHEN USING DISCORD OVERLAY!\n(Have legacy overlay disabled)'
       },
       {
         title: 'LoadHyperVisor Error!',
-        content: 'Hypervisor not loaded properly. Follow this video:',
-        links: ['https://youtu.be/XYVeHy5u4j4']
+        content: 'Hypervisor not loaded properly, follow this video: https://youtu.be/XYVeHy5u4j4'
       },
       {
         title: 'Error! Craft UEFI',
-        content: 'Try making a partition (GPT) in Disk Management and boot from there. If not working, reinstall Windows.'
+        content: 'Try making a partition (GPT) in disk management and boot from there, if not working reinstall windows.'
       },
       {
         title: 'Blackscreen Initialization',
-        content: 'Disable TPM and re-check all HyperVisor setup. Follow YT Link above.'
+        content: 'Disable TPM and re-check all setup for HyperVisor use. (YT Link)'
       },
       {
         title: 'Bad Image Libs',
-        content: 'Replace the following files from the loader folder into C:\\Windows\\System32 AND C:\\Windows\\INF:\n- libcrypto-1_1-x64.dll\n- libssl-1_1-x64.dll',
-        codeBlocks: ['Copy libcrypto-1_1-x64.dll and libssl-1_1-x64.dll to:\nC:\\Windows\\System32\nC:\\Windows\\INF']
+        content: 'Solution: Files from the folder with the loader libcrypto-1_1-x64.dll and libssl-1_1-x64.dll replace them in C:\\Windows\\System32 and C:\\Windows\\INF'
       },
       {
-        title: 'Secure Boot Bypass — Valorant Fix',
-        content: 'Follow these steps:',
-        links: ['https://gofile.io/d/JPNqIp'],
-        codeBlocks: [
-          '1. WBCL.dat → drop in C:\\Windows\\System32',
-          '2. Run Start.exe as Admin',
-          '3. Run Secure Boot Fix.bat'
-        ]
+        title: 'Secure boot bypass Valorant fix',
+        content: 'https://gofile.io/d/JPNqIp\n1) WBCL.dat - drop in C:\\Windows\\System32 \n2) Run Start.exe as Admin \n3) Run Secure Boot Fix.bat'
       },
       {
         title: 'Unsupported 16-Bit Application',
-        content: 'Take a screenshot confirming:\n- Windows Defender Real-time Protection is DISABLED\n- All third-party anti-virus REMOVED\n- Firewall completely disabled\n- No YouTube/Discord bypasses interfering with loader\n- Use VPN for launching'
+        content: 'Screenshot of disabled Windows Defender (Real-time Protection), third-party anti-virus systems should also be REMOVED from the PC.\nDisable the firewall completely\nDelete Bypassing YouTube/Discord may interfere with the launch of the loader\nUse VPN for launching'
       }
     ]
   },
@@ -1105,28 +1060,28 @@ const PRODUCTS = [
     otherRequirements: [],
     fixes: [
       {
-        title: 'No Available Servers Were Found',
-        content: 'Use a VPN.'
+        title: 'no available servers were found',
+        content: 'use vpn'
       },
       {
-        title: 'CRD Failed at 199 with Code 887a0001',
-        content: 'Try disabling the integrated GPU. If that doesn\'t work, or the customer has no other GPU, issue a refund.'
+        title: 'crd failed at 199 with code 887a0001',
+        content: 'try disabling integrated gpu, if that doesn\'t work or doesn\'t have any other gpu than integrated gpu then refund'
       },
       {
-        title: 'Required Resource Not Found',
-        content: 'Start the cheat AFTER the spoofer.'
+        title: 'required resource not found',
+        content: 'start cheat after spoofer'
       },
       {
-        title: 'Failed to Prepare Environment (1)',
-        content: 'Restart PC and try again.'
+        title: 'failed to prepare environment(1)',
+        content: 'restart pc and try again'
       },
       {
-        title: 'Error 0x298',
-        content: 'Contact developer.'
+        title: 'error 0x298',
+        content: 'contact dev'
       },
       {
-        title: 'Failed to Inject the Cheat (12)',
-        content: 'Try pressing OK and entering the game to see if it works.'
+        title: 'failed to inject the cheat(12)',
+        content: 'try pressing ok and entering the game and see if it works'
       }
     ]
   },
@@ -1140,8 +1095,7 @@ const PRODUCTS = [
     otherRequirements: [],
     fixes: [
       {
-        title: 'Cosmo Rust — Occlusion Culling',
-        content: 'Turn OFF Occlusion Culling in Experimental settings for COSMO RUST.'
+        title: 'Occlusion culling off in Experimental settings for COSMO RUST.'
       }
     ]
   },
@@ -1155,28 +1109,32 @@ const PRODUCTS = [
     otherRequirements: [],
     fixes: [
       {
-        title: 'Refunds — Required Information',
-        content: 'When processing a refund, ask for: Key, Order Number, Key Length, and Game.'
+        title: 'Refunds',
+        content: 'When refunding please ask for key, order number, key length, and what game.'
       },
       {
-        title: 'Eligible Refund Reasons',
-        content: '• Instant ban without being able to use the product (verify user wasn\'t banned before or double-injected).\n• Corrupted PC caused by the product (some developers have fixes, so no refund in those cases).'
+        title: 'Eligible refund reasons',
+        content: 'Insta banned without being able to use the product. (Check if user wasn\'t banned before or double injected)\n\nIf user falls under these conditions then we can refund, if user doesn\'t fit then kindly explain why and what they did wrong and mention how to remove ban with spoofer and new account.'
       },
       {
-        title: 'Product Updating',
-        content: 'If a product has been updating for a while and users ask for refunds, tell them to wait. If a massive number of users make tickets and the product has been down for a very long time, refunds may be considered in some cases.'
+        title: 'Corrupted PC',
+        content: 'When a user uses something and it wipes their pc, then we usually refund. Some developers have fixes though. (So no refund)'
+      },
+      {
+        title: 'Updating',
+        content: 'If a product has been updating for a while, and people as for a refund please say to wait. \nIf a insane amount of users make tickets about it and product been taking a long time without update, we might refund in some cases.'
       },
       {
         title: 'Downgrading',
-        content: 'We can refund some products if user doesn\'t want to downgrade, but preferably convince them to downgrade. Suggest backing up important files with OneDrive or a USB. If user continues to request a refund, @ a Senior Support. You can always ask a senior if you can refund.'
+        content: 'We can refund some products if user does not wanna downgrade, but we rather have user downgrade.\nYou can convince them to backup important files with something like onedrive or a USB. If user continues to want refund please @ a senior support - You can always ask a senior if you can refund.'
       },
       {
-        title: 'Compensation',
-        content: 'Compensation may be provided in some cases. Always ask a Senior Support for approval.'
+        title: 'Compensations',
+        content: 'We can comp users keys for most reasons, like:\n- losing time from troubleshooting, when a product was updating or not working.\n- We WON\'T comp keys if they have been comped more than once already, we won\'t comp little time like 1-2 hours.\n- Some devs take time to comp keys so please make sure you dont "Ghost" the user and reply to them that we are still waiting for developers.'
       },
       {
-        title: 'HWID Reset',
-        content: 'HWID Resets are handled by Senior Support or the developer. Escalate these cases.'
+        title: 'HWID Resets',
+        content: 'Ask Senior Support or some support with reset access.'
       }
     ]
   }
