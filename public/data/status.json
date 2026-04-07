@@ -418,7 +418,7 @@
         {
           "name": "ARK Survival Ascended",
           "brand": "Viper",
-          "status": "Undetected"
+          "status": "Updating"
         },
         {
           "name": "ARK Survival Evolved",
@@ -1233,7 +1233,7 @@
         {
           "name": "ARK Survival Ascended",
           "brand": "Viper",
-          "status": "Undetected"
+          "status": "Updating"
         },
         {
           "name": "ARK Survival Evolved",
@@ -1359,7 +1359,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-07T20:05:02.188852+00:00",
+  "lastUpdated": "2026-04-07T21:02:47.560362+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
