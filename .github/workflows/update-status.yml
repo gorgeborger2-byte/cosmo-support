@@ -22,30 +22,16 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Cache pip
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install playwright beautifulsoup4
-
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('scripts/fetch_status.py') }}
-          restore-keys: playwright-${{ runner.os }}-
+          python -m playwright install chromium --with-deps
 
       - name: Fetch status
         env:
           STATUS_PASSWORD: ${{ secrets.STATUS_PASSWORD }}
-        run: timeout 180 python scripts/fetch_status.py || echo "Fetch timeout or failed"
+        run: python scripts/fetch_status.py
 
       - name: Commit if changed
         run: |
