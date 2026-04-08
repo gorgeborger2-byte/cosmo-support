@@ -919,7 +919,7 @@
         {
           "name": "PUBG",
           "brand": "Kane",
-          "status": "Undetected"
+          "status": "Updating"
         },
         {
           "name": "Rust",
@@ -1359,7 +1359,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-07T23:25:36.321164+00:00",
+  "lastUpdated": "2026-04-08T00:04:40.724378+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
