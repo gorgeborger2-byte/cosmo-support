@@ -975,7 +975,7 @@
         {
           "name": "ARC Raiders",
           "brand": "Liquid",
-          "status": "Testing"
+          "status": "Undetected"
         },
         {
           "name": "Albion Online",
@@ -1359,7 +1359,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-08T18:44:38.849136+00:00",
+  "lastUpdated": "2026-04-08T19:50:56.587525+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
