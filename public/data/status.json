@@ -610,7 +610,7 @@
         {
           "name": "Gray Zone Warfare",
           "brand": "Athena",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "Arc Raiders",
@@ -1359,7 +1359,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-09T17:22:00.908090+00:00",
+  "lastUpdated": "2026-04-09T18:33:14.892562+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
