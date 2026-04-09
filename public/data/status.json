@@ -63,7 +63,7 @@
         {
           "name": "FragPunk",
           "brand": "AstroZoom",
-          "status": "Undetected"
+          "status": "Updating"
         },
         {
           "name": "Squad",
@@ -463,7 +463,7 @@
         {
           "name": "SMITE 2",
           "brand": "Viper",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "The Isle Evrima",
@@ -519,7 +519,7 @@
         {
           "name": "The Finals",
           "brand": "AstroZoom",
-          "status": "Undetected"
+          "status": "Updating"
         },
         {
           "name": "ARC Raiders",
@@ -544,7 +544,7 @@
         {
           "name": "FragPunk",
           "brand": "AstroZoom",
-          "status": "Undetected"
+          "status": "Updating"
         },
         {
           "name": "Squad",
@@ -798,7 +798,7 @@
         {
           "name": "Arena Breakout",
           "brand": "Hero",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "Rust",
@@ -1283,7 +1283,7 @@
         {
           "name": "Gray Zone Warfare",
           "brand": "Viper",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "Hunt Showdown",
@@ -1313,7 +1313,7 @@
         {
           "name": "SMITE 2",
           "brand": "Viper",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "The Isle Evrima",
@@ -1359,7 +1359,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-09T14:33:00.542581+00:00",
+  "lastUpdated": "2026-04-09T16:06:58.941636+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
