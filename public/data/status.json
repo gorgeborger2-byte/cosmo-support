@@ -28,7 +28,7 @@
         {
           "name": "Battlefield 6",
           "brand": "Liquid",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "Delta Force",
@@ -844,7 +844,7 @@
         {
           "name": "Battlefield 6",
           "brand": "Kane",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "CS2",
@@ -919,7 +919,7 @@
         {
           "name": "PUBG",
           "brand": "Kane",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "Rust",
@@ -1359,7 +1359,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-10T05:15:27.556254+00:00",
+  "lastUpdated": "2026-04-10T07:03:37.513804+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
