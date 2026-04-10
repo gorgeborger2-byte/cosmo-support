@@ -381,16 +381,6 @@
           "status": "Undetected"
         },
         {
-          "name": "Arma Reforger",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "MW3",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
           "name": "Ark SA",
           "brand": "Vex",
           "status": "Undetected"
@@ -1116,49 +1106,8 @@
     },
     {
       "brand": "Pulse",
-      "status": "Undetected",
-      "products": [
-        {
-          "name": "Apex",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "ARC Raiders",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "Arma Reforger",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "CS2",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "DayZ",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "EFT",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "MW3",
-          "brand": "Pulse",
-          "status": "Undetected"
-        },
-        {
-          "name": "The Finals",
-          "brand": "Pulse",
-          "status": "Undetected"
-        }
-      ]
+      "status": "Unknown",
+      "products": []
     },
     {
       "brand": "Vex",
@@ -1414,7 +1363,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-10T22:22:10.060143+00:00",
+  "lastUpdated": "2026-04-10T23:03:28.596635+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
