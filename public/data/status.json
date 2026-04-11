@@ -18,7 +18,7 @@
         {
           "name": "Call of Duty",
           "brand": "AstroZoom",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "Arena Breakout",
@@ -128,11 +128,6 @@
         {
           "name": "Counter-Strike 2",
           "brand": "Athena",
-          "status": "Undetected"
-        },
-        {
-          "name": "Call of Duty",
-          "brand": "Atlas",
           "status": "Undetected"
         },
         {
@@ -554,7 +549,7 @@
         {
           "name": "Call of Duty",
           "brand": "AstroZoom",
-          "status": "Updating"
+          "status": "Undetected"
         },
         {
           "name": "Arena Breakout",
@@ -1414,7 +1409,7 @@
       ]
     }
   ],
-  "lastUpdated": "2026-04-11T11:57:56.523637+00:00",
+  "lastUpdated": "2026-04-11T12:56:55.742480+00:00",
   "loggedIn": true,
   "source": "github-actions"
 }
